@@ -1,4 +1,3 @@
-# donate
-# Donate
+#Donate
 
 Link: https://trickanhflip.github.io/Donate/
