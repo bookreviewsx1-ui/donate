@@ -1,3 +1,3 @@
 #DONTATE
 
-https://trickanhflip.github.io/Donate/
+https://bookreviewsx1-ui.github.io/donate/
