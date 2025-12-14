@@ -1,129 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate</title>
+
     <style>
         * {
             box-sizing: border-box;
         }
 
-     /* 🌈 GIỮ MÀU NỀN CŨ – THÊM CHUYỂN ĐỘNG NHẸ */
-body, html {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #c3dff7;
-    margin: 0;
-    padding: 5px;
-    height: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
+        /* 🌈 NỀN GRADIENT CHUYỂN ĐỘNG */
+        body,
+        html {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #89f7fe, #66a6ff, #c3cfe2, #f5f7fa);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    background-image: linear-gradient(
-        120deg,
-        #c3dff7,
-        #d6ebff,
-        #c3dff7
-    );
-    background-size: 300% 300%;
-    animation: bgMove 15s ease infinite;
-}
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-@keyframes bgMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        /* 💎 GLASSMORPHISM CARD */
+        .container {
+            width: 100%;
+            max-width: 700px;
+            padding: 35px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-/* 💎 GLASSMORPHISM NHẸ – GIỮ MÀU TRẮNG */
-.container {
-    width: 100%;
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    overflow: hidden;
+        /* 💓 CARD NỔI KHI HOVER */
+        .container:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.25);
+        }
 
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+        h1 {
+            font-size: 2.6rem;
+            color: #0d2035;
+            margin-bottom: 15px;
+        }
 
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+        p {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
 
-/* 💓 CARD NỔI KHI HOVER */
-.container:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-}
+        .bank-info {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
 
-/* ✨ QR PHÁT SÁNG + HOVER MƯỢT */
-.qr-code img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
+        .bank-info h2 {
+            color: #0a1f35;
+            margin-bottom: 10px;
+        }
 
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.2),
-        0 0 0 rgba(100, 160, 255, 0);
+        .bank-info p {
+            margin: 6px 0;
+            font-size: 1.05rem;
+        }
 
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+        /* ✨ QR PHÁT SÁNG */
+        .qr-code img {
+            max-width: 260px;
+            width: 100%;
+            border-radius: 18px;
+            margin: 20px 0;
+            box-shadow: 0 0 25px rgba(102, 166, 255, 0.6);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-.qr-code img:hover {
-    transform: scale(1.12);
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.25),
-        0 0 25px rgba(100, 160, 255, 0.8);
-}
+        .qr-code img:hover {
+            transform: scale(1.12) rotate(1deg);
+            box-shadow: 0 0 45px rgba(102, 166, 255, 0.9);
+        }
 
-/* 💎 BANK INFO NỔI NHẸ */
-.bank-info {
-    background-color: #e9f7ff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+        .thank-you p {
+            font-weight: bold;
+            color: #0d2035;
+        }
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
 
-.bank-info:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
+            .container {
+                padding: 25px;
+            }
 
+            .qr-code img {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
-        <h1>Donate</h1>
+        <h1>💖 Donate</h1>
         <p>Cảm ơn bạn đã quyết định đóng góp cho dự án của chúng tôi.</p>
 
         <div class="bank-info">
-            <h2>Thông Tin Tài Khoản Ngân Hàng</h2>
-            <p><strong>Ngân Hàng:</strong> Vietcombank </p>
-            <p><strong>Chủ Tài Khoản:</strong> Nguyen Huy HOANG </p>
+            <h2>Thông Tin Tài Khoản</h2>
+            <p><strong>Ngân Hàng:</strong> Vietcombank</p>
+            <p><strong>Chủ Tài Khoản:</strong> Nguyen Huy HOANG</p>
             <p><strong>Số Tài Khoản:</strong> 99999999999</p>
         </div>
 
         <div class="qr-code">
-            <img src="597227137_749493008168825_2141918011265516547_n.jpg" alt="QR Code Donate">
+            <img src="597227137_749493008168825_2141918011265516547_n.jpg" alt="QR Donate">
         </div>
 
         <div class="thank-you">
-            <p>Cảm ơn bạn rất nhiều vì sự đóng góp của mình!</p>
+            <p>🙏 Cảm ơn bạn rất nhiều vì sự đóng góp!</p>
         </div>
     </div>
 
-
 </body>
-
 </html>
