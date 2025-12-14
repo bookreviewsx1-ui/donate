@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dev Pan</title>
+  <title>Trick & Flip</title>
 
   <!-- Icons -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -33,17 +33,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background 1.2s ease; /* mượt khi đổi màu */
+      transition: background 1.2s ease;
     }
 
     .card {
       width: 300px;
-      height: 420px;
       border-radius: 14px;
       text-align: center;
       background-color: var(--card-bg);
-      overflow: hidden;
-      padding: 20px;
+      padding: 22px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
@@ -54,13 +52,6 @@
       border-radius: 50%;
       border: 4px solid var(--main-color);
       overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card__img:hover {
-      transform: scale(1.08) rotate(2deg);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
     .card__img img {
@@ -71,139 +62,109 @@
 
     h2 {
       color: #fff;
-      margin-top: 24px;
+      margin-top: 22px;
       font-size: 22px;
       font-weight: 600;
     }
 
     p {
-      color: var(--main-color);
+      color: #fff;
       font-size: 14px;
       margin-top: 6px;
       opacity: 0.9;
     }
 
     .card__social {
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
     .card__social a {
-      text-decoration: none;
       color: #fff;
-      margin: 0 14px;
-      display: inline-block;
+      margin: 0 12px;
       font-size: 20px;
-      transition: transform 0.25s ease, color 0.25s ease;
+      transition: transform 0.25s ease;
     }
 
     .card__social a:hover {
-      color: var(--main-color);
       transform: translateY(-4px) scale(1.1);
     }
 
-    .btn {
-      margin-top: 30px;
+    /* ===== NÚT DONATE ===== */
+    .donate-btn {
+      margin-top: 28px;
       display: inline-block;
-      text-decoration: none;
+      padding: 12px 34px;
+      font-size: 16px;
+      font-weight: 600;
       color: #fff;
-      border: 1px solid var(--main-color);
-      padding: 10px 26px;
-      border-radius: 12px;
-      transition: background-color 0.25s ease, transform 0.2s ease;
+      text-decoration: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff4ecd, #4fd8ff);
+      box-shadow:
+        0 0 12px rgba(255, 78, 205, 0.6),
+        0 0 25px rgba(79, 216, 255, 0.4);
+      transition: all 0.35s ease;
+      position: relative;
     }
 
-    .btn:hover {
-      background-color: var(--hover-bg);
-      transform: scale(1.05);
+    .donate-btn:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 18px rgba(255, 78, 205, 0.9),
+        0 0 35px rgba(79, 216, 255, 0.7);
+    }
+
+    .donate-btn::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      background: linear-gradient(270deg, #ff4ecd, #4fd8ff, #ff4ecd);
+      background-size: 400%;
+      z-index: -1;
+      animation: borderRun 4s linear infinite;
+    }
+
+    @keyframes borderRun {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 400% 50%; }
     }
 
     @media (max-width: 480px) {
       .card {
         width: 90%;
-        height: auto;
       }
-    .donate-btn {
-  margin-top: 28px;
-  display: inline-block;
-  padding: 12px 34px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 14px;
-
-  /* Viền gradient */
-  background: linear-gradient(135deg, #ff4ecd, #4fd8ff);
-  box-shadow:
-    0 0 12px rgba(255, 78, 205, 0.6),
-    0 0 25px rgba(79, 216, 255, 0.4);
-
-  transition: all 0.35s ease;
-  position: relative;
-}
-
-/* Hover */
-.donate-btn:hover {
-  transform: scale(1.08);
-  box-shadow:
-    0 0 18px rgba(255, 78, 205, 0.9),
-    0 0 35px rgba(79, 216, 255, 0.7);
-}
-
-/* Hiệu ứng viền chạy */
-.donate-btn::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 16px;
-  background: linear-gradient(270deg, #ff4ecd, #4fd8ff, #ff4ecd);
-  background-size: 400%;
-  z-index: -1;
-  animation: borderRun 4s linear infinite;
-}
-
-@keyframes borderRun {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
-}
-}
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
     <div class="card__img">
-      <img src="550376478_690575233315871_2700702630543311178_n.jpg" alt="Avatar Bin" />
+      <img src="550376478_690575233315871_2700702630543311178_n.jpg" alt="Avatar">
     </div>
 
     <h2>Trick & Flip</h2>
-    <p>Welcome to Trick & Flip! 🚀</p>
+    <p>Welcome to Trick & Flip 🚀</p>
 
     <div class="card__social">
-      <a href="https://facebook.com/your-facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://youtube.com/@your-channel" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-      <a href="https://tiktok.com/@your-tiktok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
-      <a href="https://github.com/your-github" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
     </div>
-<a href="donate.html" class="donate-btn">💖 Donate</a>
 
-
+    <a href="donate.html" class="donate-btn">💖 Donate</a>
   </div>
 
   <script>
     function randomColor() {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
+      return '#' + Math.floor(Math.random() * 16777215).toString(16);
     }
 
     function setRandomBackground() {
-      const color1 = randomColor();
-      const color2 = randomColor();
-      document.body.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+      document.body.style.background =
+        `linear-gradient(135deg, ${randomColor()}, ${randomColor()})`;
     }
 
     setRandomBackground();
